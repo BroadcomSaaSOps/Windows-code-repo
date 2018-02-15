@@ -5,6 +5,8 @@ Included are the files used to create a level 1 for 2012 and level 2 for 2016 me
  
     Security configurations (Security Folder)
     LGPO policies (Hardening Folder)
+    WinRM authentication (WinRM Folder)
+    
     
  Terraform 
  
