@@ -1,0 +1,12 @@
+# file: 2016DChosts
+
+[windows]
+Machine ip address here do not use a host name
+
+[windows:vars]
+ansible_ssh_user=LocalMachineAdminEquivalentAccount
+ansible_ssh_pass=Passwordhere
+ansible_ssh_port=5986
+ansible_connection=winrm
+ansible_winrm_server_cert_validation=ignore
+ansible_winrm_tranpsort=credssp
