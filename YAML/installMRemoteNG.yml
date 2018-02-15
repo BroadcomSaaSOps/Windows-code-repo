@@ -1,0 +1,19 @@
+---
+- hosts: MRemoteNG
+  tasks:
+   - name: copy contents folder to c:\temp
+     win_copy:
+       src: /root/.ansible/software/MremoteNG/install/
+       dest: c:\temp
+
+   - name: install MRemoteNG version 1.75.7011.34963 
+     
+     win_package: 
+       path: c:\temp\mRemoteNG-Installer-1.75.7011.34963.msi
+       state: present
+
+   - name: delete files after install
+
+     win_file:
+       path: c:\temp\mRemoteNG-Installer-1.75.7011.34963.msi
+       state: absent

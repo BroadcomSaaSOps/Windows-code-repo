@@ -1,0 +1,19 @@
+---
+- hosts: GChrome
+  tasks:
+   - name: copy contents folder to c:\temp
+     win_copy:
+       src: /usr/local/us5np/ansible/Software/chrome/install/ 
+       dest: c:\temp
+
+   - name: install Google Chrome enterprise 64bit enterprise edition
+     
+     win_package: 
+       path: c:\temp\googlechromestandaloneenterprise64.msi
+       state: present
+
+   - name: delete files after install
+
+     win_file:
+       path: c:\temp\googlechromestandaloneenterprise64.msi
+       state: absent

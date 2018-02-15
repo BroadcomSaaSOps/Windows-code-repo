@@ -1,0 +1,17 @@
+---
+- hosts: US5NPRobot
+  tasks:
+   - name: install UIM robot and configure for US5NP hub US-US5NP
+     win_copy:
+       src: /usr/local/us5np/ansible/Software/UIMRobot/ 
+       dest: c:\temp
+   - win_command: c:\temp\nimsoft-robot-x64.exe /VERYSILENT /SUPPRESSMSGBOXES /NORESTART
+
+   - name: delete files after install
+
+     win_file:
+       path: c:\temp\nimsoft-robot-x64.exe
+       path: c:\temp\nms-robot-vars.cfg
+       state: absent
+
+   - win_reboot:

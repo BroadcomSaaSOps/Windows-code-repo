@@ -1,0 +1,14 @@
+---
+- hosts: firefox58
+  tasks:
+   - name: copy contents folder to c:\temp
+     win_copy:
+       src: /usr/local/us5np/ansible/Software/firefox/install/ 
+       dest: c:\temp
+   - win_command: c:\temp\FirefoxSetup58.0.1.exe /S
+
+   - name: delete files after install
+
+     win_file:
+       path: c:\temp\FirefoxSetup58.0.1.exe
+       state: absent 

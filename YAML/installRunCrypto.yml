@@ -1,0 +1,18 @@
+---
+- hosts: CliCrypto
+  tasks:
+   - name: copy contents folder to c:\temp
+     win_copy:
+       src: /usr/local/us5np/ansible/Software/Crypto/cli/ 
+       dest: c:\temp
+   - win_command: c:\temp\IISCryptoCli /template C:\temp\noSHA_noMD5_2016_02_07_2018.ictpl 
+
+   - name: delete files after install
+
+     win_file:
+       path: c:\temp\IISCryptoCli.exe
+       path: c:\temp\2016INFSC_02_05_2018.ictpl
+       path: c:\temp\noSHA_noMD5_2016_02_07_2018.ictpl
+       state: absent
+
+   - win_reboot:

@@ -1,0 +1,14 @@
+---
+- hosts: java
+  tasks:
+   - name: copy contents folder to c:\temp
+     win_copy:
+       src: /usr/local/us5np/ansible/Software/jre8ul61/install/ 
+       dest: c:\temp
+   - win_command: c:\temp\jre-8u161-windows-x64 /s 
+
+   - name: delete files after install
+
+     win_file:
+       path: c:\temp\jre-8u161-windows-x64.exe
+       state: absent

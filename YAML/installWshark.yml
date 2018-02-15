@@ -1,0 +1,8 @@
+---
+- hosts: WShark
+  tasks:
+   - name: copy contents folder to c:\temp
+     win_copy:
+       src: /root/.ansible/software/WireShark/install/ 
+       dest: c:\temp
+   - win_command: c:\temp\Wireshark-win64-2.4.2.exe /S 
