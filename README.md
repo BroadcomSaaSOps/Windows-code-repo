@@ -22,4 +22,4 @@ Create a SHA256 self signed certificate - ConfigureRemotingForAnsible.ps1 -Force
 
 Enable CredSSp - ConfigureRemotingForAnsible.ps1 -EnableCredSSP    
 
-that is all the modifications needed to be able to communicate with Winrm
+that is all the modifications needed to be able to communicate with Winrm.
